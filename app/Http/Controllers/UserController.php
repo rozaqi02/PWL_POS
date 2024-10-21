@@ -10,9 +10,13 @@ class UserController extends Controller
 {
     public function index() {
 
-        $user = UserModel::findOr(20, ['username', 'nama'],function () {
-            abort(404);
-        });
+        // $user = UserModel::findOrFail(1);
+        // $user = UserModel::where('username', 'manager')->firstOrFail();
+        // $user = UserModel::where('level_id', 2)->count();
+        // dd($user);
+        // $user = UserModel::findOr(20, ['username', 'nama'],function () {
+        //     abort(404);
+        // });
             // $data = [
             //     'username' => 'customer-1',
             //     'nama' => 'Pelanggan',
@@ -32,6 +36,24 @@ class UserController extends Controller
             // ];
             // UserModel::where('username', 'customer-1')->update($data); // update data user
     // $user = UserModel::all(); // ambil semua data dari tabel m_user
+
+        //     $user = UserModel::firstOrNew(
+        //     [
+        //         'username' => 'manager22',
+        //         'nama' => 'Manager Dua Dua',
+        //         'password'=> Hash::make('12345'),
+        //         'level_id'=> 2
+        //     ],
+        // );
+
+            $user = UserModel::firstOrNew(
+            [
+                'username' => 'manager',
+                'nama' => 'Manager',
+            ],
+        );
+        return view ('user', ['data'=>$user]);
+
     return view('user', ['data' => $user]);
     }
 }
