@@ -24,9 +24,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landing');
-});
 Route::pattern('id', '[0-9]+');
 
 Route::get('login', [AuthController::class, 'login'])->name('login');
@@ -38,7 +35,7 @@ Route::post('register', [AuthController::class, 'store']);
 
 Route::middleware(['auth'])->group(function () {
 
-    
+    Route::get('/', [WelcomeController::class, 'index']);
 
     Route::middleware(['authorize:ADM,MNG,STF,CUS'])->group(function(){
         Route::get('/profile', [ProfileController::class, 'index']);

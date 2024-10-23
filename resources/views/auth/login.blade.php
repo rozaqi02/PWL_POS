@@ -16,13 +16,67 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
+    <style>
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-image: url('{{ asset('image/login-background.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-box {
+            width: 400px;
+            margin: 7% auto;
+        }
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            border-bottom: none;
+        }
+        .card-header a {
+            color: #007bff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .input-group .form-control {
+            border-radius: 30px;
+            padding: 15px;
+            font-size: 1rem;
+        }
+        .input-group-text {
+            border-radius: 30px;
+        }
+        .btn-primary {
+            border-radius: 30px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .login-box-msg {
+            font-size: 1.1rem;
+        }
+        .row {
+            margin-top: 15px;
+        }
+    </style>
 </head>
 
 <body class="hold-transition login-page">
     <div class="login-box">
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
-            <div class="card-header text-center"><a href="{{ url('/') }}" class="h1"><b>Admin</b>LTE</a></div>
+            <div class="card-header text-center">
+                <a href="{{ url('/') }}" class="h1"><b>Rozaqi </b>Store</a>
+            </div>
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
                 <form action="{{ url('login') }}" method="POST" id="form-login">
@@ -61,7 +115,7 @@
                     </div>
                     <hr>
                     <div class="row">
-                        Don't have account?<a href="{{ url('register') }}">register</a>
+                        Don't have an account? <a href="{{ url('register') }}">Register</a>
                     </div>
                 </form>
             </div>

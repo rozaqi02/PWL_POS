@@ -25,6 +25,34 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
 
+    <style>
+        .sidebar-dark-primary {
+            background-color: #1f2d3d;
+        }
+        .sidebar-dark-primary .nav-link.active {
+            background-color: #007bff;
+            border-radius: 8px;
+        }
+        .sidebar-dark-primary .nav-link:hover {
+            background-color: #007bff;
+            color: white;
+            transform: translateX(5px);
+            border-radius: 8px;
+        }
+        .brand-link {
+            background-color: #007bff;
+            text-align: center;
+        }
+        .brand-link .brand-text {
+            color: white;
+            font-weight: bold;
+        }
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
     @stack('css')
     <!-- Digunakan untuk memanggil custom css dari perintah push('css') pada masing-masing view -->
 </head>
@@ -40,10 +68,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="{{ url('/') }}" class="brand-link">
-                
                 <img src="{{ asset('adminlte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-
                 <span class="brand-text font-weight-light">PWL - Starter Code</span>
             </a>
 
